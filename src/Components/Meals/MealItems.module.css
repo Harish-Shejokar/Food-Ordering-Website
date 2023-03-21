@@ -1,0 +1,19 @@
+.item{
+   
+    /* border: 1px solid #ccc; */
+    
+
+}
+
+h3,p{
+    margin-bottom: -12px;
+    padding: 0;
+}
+
+.description{
+    font-style: italic;
+}
+
+.price{
+    color: rgb(145, 98, 11);
+}
