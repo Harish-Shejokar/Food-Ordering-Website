@@ -1,15 +1,22 @@
 import React from "react";
-import Classes from './MealItems.module.css';
+import Classes from "./MealItems.module.css";
+import MealItemForm from "./MealItemForm";
 
 const MealItems = (props) => {
-    return (
-      <li key={Math.random()} className={Classes.item}>
-        <h3>{props.name}</h3>
-        <p className={Classes.description}>{props.description}</p>
-            <h2 className={Classes.price}>${props.price}</h2>
-            <hr />
+  return (
+    <React.Fragment>
+      <li className={Classes.meal}>
+        <div>
+          <h3>{props.name}</h3>
+          <div className={Classes.description}>{props.description}</div>
+          <div className={Classes.price}>${props.price}</div>
+        </div>
+        <div>
+          <MealItemForm />
+        </div>
       </li>
-    );
- }
+    </React.Fragment>
+  );
+};
 
 export default MealItems;
