@@ -6,7 +6,7 @@ import Cart from './Components/Cart/Cart'
 function App() {
   return (
     <Fragment>
-      <Cart/>
+      {/* <Cart/> */}
       <Header />
       <main>
         <Meals />
