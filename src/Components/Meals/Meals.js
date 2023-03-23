@@ -6,7 +6,6 @@ const Meals = () => {
   return (
     <React.Fragment>
       <MealsSummary />
-
       <AvailabelMeals />
     </React.Fragment>
   );
