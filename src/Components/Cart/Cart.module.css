@@ -55,6 +55,14 @@
   color: white;
 }
 
+.list{
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+
  /* .card{
     background-color: white;
     border-radius: 12px ;
