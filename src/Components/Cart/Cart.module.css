@@ -12,7 +12,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 20rem;
+  max-height: auto;
   overflow: auto;
 }
 
@@ -56,12 +56,62 @@
 }
 
 .list{
-  font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
+  border-bottom: .2rem solid #ad5502;
+  /* margin: 1rem; */
 }
 
+.list h3{
+  margin: 0 0 0.24rem 0;
+}
+
+.amount{
+  margin-top: .24rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quantity{
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 0 1rem;
+  color: black;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.btn{
+   /* display: flex;
+   justify-content: right; */
+   /* margin-left: 30rem; */
+   position: absolute;
+   right: 2rem;
+   margin-top: -3rem;
+   margin-bottom: 1rem;
+   
+}
+
+.btn button{
+  cursor: pointer;
+  padding: .2rem .8rem;
+  margin-right: .2rem;
+  border-radius: 10px;
+  background-color: white;
+  color: #ad5502;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  border: 1px solid #ad5502;
+}
+
+.btn button:hover,.btn button:active{
+  background-color: #8a2b06;
+  color: white;
+}
 
  /* .card{
     background-color: white;

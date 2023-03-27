@@ -5,10 +5,41 @@ const CartProvider = (props) => {
   const [items, updateItem] = useState([]);
 
   const addItemToCartHandler = (item) => {
-    updateItem([...items, item]);
+    updateItem((prevItem) => {
+      let pointer = false;
+     prevItem.forEach((elem) => {
+        if (elem.name === item.name) {
+          pointer = true;
+          elem.quantity += item.quantity;
+          // elem.price = elem.price * elem.quantity;
+          // console.log(elem.price);
+        }
+      });
+      if (pointer) return [...prevItem];
+      return [...prevItem, item];
+    });
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {
+    console.log(id)
+    updateItem((prevItem) => {
+      
+      prevItem.forEach(item => {
+         if (item.quantity === 1) {
+           item.quantity -= 1;
+           prevItem =prevItem.filter((elem) => {
+             return elem.quantity > 0;
+           });
+         } else if (item.id === id) {
+           item.quantity -= 1;
+         }
+       
+      })
+      
+      return [...prevItem];
+      
+    })
+  };
 
   const cartContext = {
     items: items,

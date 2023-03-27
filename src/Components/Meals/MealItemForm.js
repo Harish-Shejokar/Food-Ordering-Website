@@ -11,10 +11,10 @@ const MealItemForm = (props) => {
   const addItemToCart = (event) => {
     event.preventDefault();
     const quantity = document.getElementById("amount" + props.id).value;
-
-
-
-    cartCtx.addItem({ ...props.item, quantity: quantity });
+    const obj = { ...props.item, quantity: parseInt(quantity) }
+   
+    // console.log(obj);
+    cartCtx.addItem(obj);
     
   };
 

@@ -7,13 +7,34 @@ const Cart = (props) => {
   const [totalAmount, settotalAmount] = useState(0);
   // const [listItem, setListItem] = useState(cartCtx.items);
   console.log(cartCtx.items);
+
+  const decremenInQuantity = (event) => {
+    // console.log(event.target.id)
+    const id = event.target.id;
+    cartCtx.removeItem(id)
+  }
+
+
+  const incrementInQuantity = (e) => {
+    console.log(e.target)
+  }
+
+
   const cartItem = (
     <ul className={Classes["cart-items"]}>
       {cartCtx.items.map((item) => (
-        <li className={Classes.list} key={Math.random()}>
-          <span> Dish: {item.name}</span>
-          <span>Price: {(item.quantity * item.price).toFixed(2)}</span>
-          <span>Quantity : {item.quantity} </span>
+        <li id={item.id} className={Classes.list} key={Math.random()}>
+          <div>
+            <h3>{item.name}</h3>
+            <div className={Classes.amount}>
+              ${(item.price)}
+              <span className={Classes.quantity}>x{item.quantity} </span>
+            </div>
+            <div className={Classes.btn}>
+              <button type="button" id={item.id} onClick={decremenInQuantity}>-</button>
+              <button type="button" onClick={incrementInQuantity}>+</button>
+            </div>
+          </div>
         </li>
       ))}
     </ul>
@@ -34,7 +55,7 @@ const Cart = (props) => {
       {cartItem}
       <div className={Classes.total}>
         <span>Total Amount</span>
-        <span>{totalAmount}</span>
+        <span>${totalAmount}</span>
       </div>
       <div className={Classes.actions}>
         <button onClick={props.onHideCart} className={Classes["button--alt"]}>
