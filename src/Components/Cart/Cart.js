@@ -6,7 +6,7 @@ const Cart = (props) => {
   const cartCtx = useContext(CartContext);
   const [totalAmount, settotalAmount] = useState(0);
   // const [listItem, setListItem] = useState(cartCtx.items);
-  console.log(cartCtx.items);
+  // console.log(cartCtx.items);
 
   const decremenInQuantity = (event) => {
     // console.log(event.target.id)
@@ -16,7 +16,10 @@ const Cart = (props) => {
 
 
   const incrementInQuantity = (e) => {
-    console.log(e.target)
+    const id = e.target.id;
+    // console.log(cartCtx.items);
+    cartCtx.addMoreItems(id);
+    // cartCtx.addItem(id)
   }
 
 
@@ -31,8 +34,8 @@ const Cart = (props) => {
               <span className={Classes.quantity}>x{item.quantity} </span>
             </div>
             <div className={Classes.btn}>
-              <button type="button" id={item.id} onClick={decremenInQuantity}>-</button>
-              <button type="button" onClick={incrementInQuantity}>+</button>
+              <button  id={item.id} onClick={decremenInQuantity}>-</button>
+              <button  id={item.id} onClick={incrementInQuantity}>+</button>
             </div>
           </div>
         </li>

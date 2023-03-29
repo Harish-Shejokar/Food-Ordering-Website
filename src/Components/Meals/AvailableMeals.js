@@ -9,13 +9,13 @@ import Card from '../UI/Card'
      id: "m1",
      name: "Sushi",
      description: "finest fish and veggies",
-     price: 22.9,
+     price: 22.91,
    },
    {
      id: "m2",
      name: "Schnitzel",
      description: "A german Speciality",
-     price: 16.5,
+     price: 16.56,
    },
    {
      id: "m3",
