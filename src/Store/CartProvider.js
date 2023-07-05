@@ -41,7 +41,7 @@ const CartProvider = (props) => {
   const addMoreItemsHandler = (id) => {
     console.log(id);
     updateItem(prevItem => {
-      prevItem.forEach(item => {
+      prevItem.map(item => {
         if (item.id === id) {
           item.quantity += 1;
           console.log(item.quantity)
